@@ -1,16 +1,21 @@
-const express = require("express")
-const server = express()
-const routes = require("./routes")
+const express = require("express");
+const server = express();
+const routes = require("./routes");
+const path = require("path");
 
-server.set('view engine', 'ejs')
+//usando template engine
+server.set("view engine", "ejs");
+
+//Mudar localizacao da pasta views
+server.set("views", path.join(__dirname, "views"));
 
 //habilitar arquivos estaticos
-server.use(express.static("public"))
+server.use(express.static("public"));
 
 //usar o req.body
-server.use(express.urlencoded({ extended: true }))
+server.use(express.urlencoded({ extended: true }));
 
 //routes
-server.use(routes)
+server.use(routes);
 
-server.listen(3000, () => console.log('rodando'))
+server.listen(3000, () => console.log("rodando"));
