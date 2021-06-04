@@ -10,8 +10,9 @@ module.exports = {
   save(req, res) {
     const jobs = Job.get();
     const lastId = jobs[jobs.length - 1]?.id || 0;
-    //poderia ser substituido por jobs.push(job)
-    jobs.push({
+
+    Job.create({
+      //poderia ser substituido por jobs.push(job)
       //req.body = { name: 'asf', 'daily-hours': '3', 'total-hours': '3' }
       id: lastId + 1,
       name: req.body.name,
