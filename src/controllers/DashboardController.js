@@ -40,6 +40,11 @@ module.exports = {
     // quatidade de horas/dia de cada job em progress
     const freeHours = profile["hours-per-day"] - jobTotalHours;
 
-    return res.render("index", { jobs: updatedJobs, profile: profile, statusCount: statusCount, freeHours: freeHours });
+    return res.render("index", {
+      jobs: updatedJobs,
+      profile: profile,
+      statusCount: statusCount,
+      freeHours: freeHours
+    });
   },
 };
