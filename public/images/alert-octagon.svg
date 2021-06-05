@@ -1,5 +1,7 @@
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.55002 1.66667H13.45L18.3334 6.55V13.45L13.45 18.3333H6.55002L1.66669 13.45V6.55L6.55002 1.66667Z" stroke="#F1972C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10 6.66667V10" stroke="#F0F2F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10 13.3333H10.01" stroke="#F0F2F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="519.9" height="526.469" viewBox="0 0 519.9 526.469">
+  <g id="Grupo_6" data-name="Grupo 6" transform="translate(-1110 -369.531)">
+    <path id="Caminho_1" data-name="Caminho 1" d="M367.624,0H152.275L0,154.2V372.27l152.275,154.2h215.35L519.9,372.269V154.2ZM479.283,355.233,350.8,485.339H169.1L40.617,355.233v-184L169.1,41.13H350.8L479.283,171.236Z" transform="translate(1110 369.531)" fill="#fe52a2"/>
+    <rect id="Retângulo_3" data-name="Retângulo 3" width="51" height="244" transform="translate(1347 460)" fill="#fff"/>
+    <rect id="Retângulo_4" data-name="Retângulo 4" width="51" height="50" transform="translate(1345 745)" fill="#fff"/>
+  </g>
 </svg>

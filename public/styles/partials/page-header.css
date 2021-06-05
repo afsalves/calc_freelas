@@ -10,7 +10,7 @@
   margin-bottom: 4rem;
 }
 
-.page-header.inner .container{
+.page-header.inner .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -19,8 +19,8 @@
   margin: 0 auto;
 
   font-family: Inter;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1.5rem;
   line-height: 1.625rem;
 
   color: var(--color-header-inner-title);
