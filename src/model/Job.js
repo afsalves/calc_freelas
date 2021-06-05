@@ -1,60 +1,57 @@
-const Database = require('../db/config')
+const Database = require("../db/config");
 
 module.exports = {
     async get() {
-        const db = await Database()
+        const db = await Database();
 
-        //faz o select e traz tudo que ele encontrar
-        const jobs = await db.all(`SELECT * FROM jobs`)
+        const jobs = await db.all(`SELECT * FROM jobs`);
 
-        await db.close()
+        await db.close();
 
-        return jobs.map(job => ({
-
-            id: job.is,
+        return jobs.map((job) => ({
+            id: job.id,
             name: job.name,
-            "daily-hours": jobs.daily_hours,
-            "total-hours": jobs.total_hours,
-            create_at: job.create_at
-        }))
+            "daily-hours": job.daily_hours,
+            "total-hours": job.total_hours,
+            created_at: job.created_at,
+        }));
     },
 
     async update(updatedJob, jobId) {
         const db = await Database()
 
-        await db.run(`UPDATE jobs SET
+        await db.run(`UPDATE jobs SET 
             name = "${updatedJob.name}",
             daily_hours = ${updatedJob["daily-hours"]},
-            total_hours = ${updatedJob["total-hours"]},
-            created_at = ${updatedJob.created_at}
+            total_hours = ${updatedJob["total-hours"]}
             WHERE id = ${jobId}
-        `)
+    `)
 
         await db.close()
     },
 
     async delete(id) {
-        const db = Database()
+        const db = await Database()
 
-        await db.ru(`DELETE FROM jobs WHERE id = ${id}`)
+        await db.run(`DELETE FROM jobs WHERE id = ${id}`)
 
-        await (await db).close()
+        await db.close()
     },
 
     async create(newJob) {
         const db = await Database()
 
         await db.run(`INSERT INTO jobs (
-           name,
-           daily_hours,
-           total_hours,
-           created_at
-       ) VALUES (
-           "${newJob.name}",
-           ${newJob["daily-hours"]},
-           ${newJob["total-hours"]},
-           ${newJob.create_at}
-       )`)
+            name,
+            daily_hours,
+            total_hours,
+            created_at
+            ) VALUES (
+            "${newJob.name}",
+            ${newJob["daily-hours"]},
+            ${newJob["total-hours"]},
+            ${newJob.created_at}
+        )`)
 
         await db.close()
     },
